@@ -10,7 +10,7 @@ const DashboardLayout = () => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content flex flex-col items-center justify-center bg-slate-200">
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
@@ -22,23 +22,24 @@ const DashboardLayout = () => {
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
-        <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-80 h-full bg-blue-400 text-white-content">
           {/* Sidebar content here */}
-          <li>
-            <div className="avatar">
-              <div className="w-24 rounded-full">
-                <img src={img} alt="photo" />
-              </div>
+          <div className="avatar d-flex justify-center mt-5">
+            <div className="w-24 rounded-full">
+              <img src={img} alt="photo" />
             </div>
-
-            <h1 className="text-2xl text-center font-bold">{name}</h1>
+          </div>
+          <h1 className="text-2xl text-white text-center font-bold mt-2">
+            {name}
+          </h1>
+          <li>
             <div className="d-flex ">
               <FaUser></FaUser>
-              <h1>{type}</h1>
+              <h1 className="text-white">{type}</h1>
             </div>
             <div className="d-flex">
               <FaEnvelope></FaEnvelope>
-              <h1>{email}</h1>
+              <h1 className="text-white">{email}</h1>
             </div>
           </li>
           <div className="divider"></div>
@@ -53,13 +54,12 @@ const DashboardLayout = () => {
                     type: type,
                     img: img,
                   }}
-                  className="btn btn-primary font-bold dark:text-white mb-2"
+                  className="btn btn-warning text-white font-bold dark:text-white mb-2"
                   to="/dashboard/myPost"
                 >
                   My Post
                 </Link>
               </li>
-              <li></li>
               <li>
                 <Link
                   state={{
@@ -69,13 +69,12 @@ const DashboardLayout = () => {
                     type: type,
                     img: img,
                   }}
-                  className=" btn btn-primary font-bold dark:text-white"
+                  className=" btn btn-warning text-white font-bold dark:text-white"
                   to="/dashboard/addPost"
                 >
                   Add Post
                 </Link>
               </li>
-              <li></li>
             </>
           )}
           {type === "tenant" && (
@@ -114,10 +113,11 @@ const DashboardLayout = () => {
               <li></li>
             </>
           )}
+          <div className="divider"></div>
           <li>
             <Link to="/" className="d-flex justify-center items-center mt-5">
-              <h1 className=" text-2xl font-bold ">Log out</h1>
-              <HiArrowRightOnRectangle fontSize={30}></HiArrowRightOnRectangle>
+              <h1 className=" text-xl text-white font-bold ">Logout</h1>
+              <HiArrowRightOnRectangle fontSize={20}></HiArrowRightOnRectangle>
             </Link>
           </li>
         </ul>
