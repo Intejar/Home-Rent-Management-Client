@@ -9,6 +9,7 @@ import Addpost from "../pages/AddPost/Addpost";
 import FindApartment from "../pages/FindApartments/FindApartment";
 import AdminMsg from "../pages/AdminMsg/AdminMsg";
 import DashboardLayout from "../Layout/DashboardLayout";
+import MyDeal from "../pages/MyDeal/MyDeal";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addPost",
         element: <Addpost></Addpost>,
+      },
+      {
+        path: "/dashboard/myDeal",
+        element: <MyDeal></MyDeal>,
       },
       {
         path: "/dashboard/findApartments",

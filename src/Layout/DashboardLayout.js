@@ -6,11 +6,11 @@ import { HiArrowRightOnRectangle } from "react-icons/hi2";
 const DashboardLayout = () => {
   const location = useLocation();
   const { id, email, name, type, img } = location.state;
-  console.log(id, email, name, type, img);
+  console.log("user", name, email);
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center bg-slate-200">
+      <div className="drawer-content items-center justify-center bg-slate-200">
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
@@ -69,10 +69,25 @@ const DashboardLayout = () => {
                     type: type,
                     img: img,
                   }}
-                  className=" btn btn-warning text-white font-bold dark:text-white"
+                  className=" btn btn-warning text-white font-bold dark:text-white mb-2"
                   to="/dashboard/addPost"
                 >
                   Add Post
+                </Link>
+              </li>
+              <li>
+                <Link
+                  state={{
+                    id: id,
+                    name: name,
+                    email: email,
+                    type: type,
+                    img: img,
+                  }}
+                  className=" btn btn-warning text-white font-bold dark:text-white"
+                  to="/dashboard/myDeal"
+                >
+                  Your Deal
                 </Link>
               </li>
             </>
@@ -88,13 +103,13 @@ const DashboardLayout = () => {
                     type: type,
                     img: img,
                   }}
-                  className="btn btn-primary font-bold dark:text-white"
+                  className="btn btn-warning text-white font-bold dark:text-white mb-2"
                   to="/dashboard/findApartments"
                 >
                   Available Apartment
                 </Link>
               </li>
-              <li></li>
+
               <li>
                 <Link
                   state={{
@@ -104,13 +119,27 @@ const DashboardLayout = () => {
                     type: type,
                     img: img,
                   }}
-                  className="btn btn-primary font-bold dark:text-white"
+                  className=" btn btn-warning text-white font-bold dark:text-white mb-2"
+                  to="/dashboard/myDeal"
+                >
+                  Your Deal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  state={{
+                    id: id,
+                    name: name,
+                    email: email,
+                    type: type,
+                    img: img,
+                  }}
+                  className="btn btn-warning text-white font-bold dark:text-white"
                   to="/dashboard/adminMsg"
                 >
                   Admin Msg
                 </Link>
               </li>
-              <li></li>
             </>
           )}
           <div className="divider"></div>

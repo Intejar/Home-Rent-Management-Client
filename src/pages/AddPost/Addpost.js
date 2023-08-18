@@ -19,7 +19,6 @@ const Addpost = () => {
   const navigate = useNavigate();
 
   const handleAddProduct = (event) => {
-    console.log(event);
     const image = event.photo_url[0];
     const formData = new FormData();
     formData.append("image", image);
