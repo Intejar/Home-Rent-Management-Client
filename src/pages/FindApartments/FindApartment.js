@@ -20,6 +20,7 @@ const FindApartment = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [dataLoad, setDataLoad] = useState(true);
   const [area, setArea] = useState("");
+  // const [prevDealData, setPrevDeal] = useState([]);
   const [posts, setPosts] = useState([]);
   const [booking, setBooking] = useState([]);
   const handleDeal = (
@@ -33,23 +34,42 @@ const FindApartment = () => {
     userEmail,
     status
   ) => {
-    const values = {
+    // setPrevDeal([]);
+    const prevDeal = {
       id: id,
-      houseNo: number,
-      area: area,
-      rent: rent,
-      userName: userName,
-      userEmail: userEmail,
-      landName: landName,
-      landEmail: landEmail,
-      status: status,
     };
     axios
-      .post("http://localhost:8081/dealLet", values)
+      .post("http://localhost:8081/checkDeal", prevDeal)
       .then((res) => {
-        toast.success("Your Deal Finalized!");
+        setIsLoading(true);
+        if (res.data === "Server Error") {
+          toast.error("Something Went Wrong!!");
+        } else {
+          setIsLoading(false);
+          toast.error("This Apartment is already booked!");
+          console.log("pre2", prevDeal);
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        const values = {
+          id: id,
+          houseNo: number,
+          area: area,
+          rent: rent,
+          userName: userName,
+          userEmail: userEmail,
+          landName: landName,
+          landEmail: landEmail,
+          status: status,
+        };
+        axios
+          .post("http://localhost:8081/dealLet", values)
+          .then((res) => {
+            toast.success("Your Deal Finalized!");
+          })
+          .catch((err) => console.log(err));
+      });
   };
   const handleReport = (
     id,
@@ -234,7 +254,7 @@ const FindApartment = () => {
                       ✕
                     </button>
                     <p className="py-4">
-                      Do you want to make with {booking[0]?.landName} at $
+                      Do you want to make deal with {booking[0]?.landName} at $
                       {booking[0]?.rent}?
                     </p>
                     <div className="modal-action">

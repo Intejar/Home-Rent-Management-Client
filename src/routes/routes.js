@@ -10,6 +10,9 @@ import FindApartment from "../pages/FindApartments/FindApartment";
 import AdminMsg from "../pages/AdminMsg/AdminMsg";
 import DashboardLayout from "../Layout/DashboardLayout";
 import MyDeal from "../pages/MyDeal/MyDeal";
+import AllDeal from "../pages/AllDeal/AllDeal";
+import PayementPage from "../pages/AdminMsg/PayementPage";
+import AllReport from "../pages/AllReport/AllReport";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +50,18 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/adminMsg",
         element: <AdminMsg></AdminMsg>,
+      },
+      {
+        path: "/dashboard/allDeal",
+        element: <AllDeal></AllDeal>,
+      },
+      {
+        path: "/dashboard/paymentPage",
+        element: <PayementPage></PayementPage>,
+      },
+      {
+        path: "/dashboard/allReport",
+        element: <AllReport></AllReport>,
       },
     ],
   },

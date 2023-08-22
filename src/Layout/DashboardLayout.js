@@ -142,6 +142,40 @@ const DashboardLayout = () => {
               </li>
             </>
           )}
+          {type === "admin" && (
+            <>
+              <li>
+                <Link
+                  state={{
+                    id: id,
+                    name: name,
+                    email: email,
+                    type: type,
+                    img: img,
+                  }}
+                  className="btn btn-warning text-white font-bold dark:text-white mb-2"
+                  to="/dashboard/allDeal"
+                >
+                  All Deal
+                </Link>
+              </li>
+              <li>
+                <Link
+                  state={{
+                    id: id,
+                    name: name,
+                    email: email,
+                    type: type,
+                    img: img,
+                  }}
+                  className="btn btn-warning text-white font-bold dark:text-white mb-2"
+                  to="/dashboard/allReport"
+                >
+                  All Report
+                </Link>
+              </li>
+            </>
+          )}
           <div className="divider"></div>
           <li>
             <Link to="/" className="d-flex justify-center items-center mt-5">

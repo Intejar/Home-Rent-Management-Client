@@ -60,43 +60,53 @@ const MyDeal = () => {
   return (
     <div>
       <h1 className="text-4xl font-extrabold text-blue-400 text-center dark:text-white my-10">
-        All Post
+        Your Deal
       </h1>
       {posts?.length > 0 ? (
         <div className="overflow-x-auto mx-5">
           <table className="table w-full">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Apartment No</th>
-                <th>Area</th>
-                <th>Rent</th>
-                <th>{type === "landlord" ? "Tenant Name" : "Landlord Name"}</th>
-                <th>
+                <th className="text-center">No.</th>
+                <th className="text-center">Apartment No</th>
+                <th className="text-center">Area</th>
+                <th className="text-center">Rent</th>
+                <th className="text-center">
+                  {type === "landlord" ? "Tenant Name" : "Landlord Name"}
+                </th>
+                <th className="text-center">
                   {type === "landlord" ? "Tenant Email" : "Landlord Email"}
                 </th>
-                <th>Payment Status</th>
+                <th className="text-center"> Payment Status</th>
               </tr>
             </thead>
             <tbody>
               {posts.map((post, i) => (
                 <tr>
-                  <th>{i + 1}</th>
-                  <td>{post.apartment_no}</td>
-                  <td>{post.apartment_area}</td>
-                  <td>{post.apartment_rent}</td>
-                  <td>
+                  <th className="text-center">{i + 1}</th>
+                  <td className="text-center">{post.apartment_no}</td>
+                  <td className="text-center">{post.apartment_area}</td>
+                  <td className="text-center">{post.apartment_rent}</td>
+                  <td className="text-center">
                     {type === "landlord"
                       ? `${post.tenant_name}`
                       : `${post.landlord_name}`}
                   </td>
-                  <td>
+                  <td className="text-center">
                     {" "}
                     {type === "landlord"
                       ? `${post.tenant_email}`
                       : `${post.landlord_email}`}
                   </td>
-                  <td>{post.payment_status}</td>
+                  {post?.payment_status === "unpaid" ? (
+                    <td className="text-sm  text-red-600 text-center">
+                      {post?.payment_status}
+                    </td>
+                  ) : (
+                    <td className="text-sm  text-green-600 text-center">
+                      {post?.payment_status}
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -104,7 +114,7 @@ const MyDeal = () => {
         </div>
       ) : (
         <h1 className="text-4xl text-slate-400 text-center dark:text-white my-5">
-          No Post Available
+          No Deal Available
         </h1>
       )}
     </div>
