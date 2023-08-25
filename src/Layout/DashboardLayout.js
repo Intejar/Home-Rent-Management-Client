@@ -34,11 +34,11 @@ const DashboardLayout = () => {
           </h1>
           <li>
             <div className="d-flex ">
-              <FaUser></FaUser>
+              <FaUser className="text-warning"></FaUser>
               <h1 className="text-white">{type}</h1>
             </div>
             <div className="d-flex">
-              <FaEnvelope></FaEnvelope>
+              <FaEnvelope className="text-warning"></FaEnvelope>
               <h1 className="text-white">{email}</h1>
             </div>
           </li>
@@ -178,7 +178,10 @@ const DashboardLayout = () => {
           )}
           <div className="divider"></div>
           <li>
-            <Link to="/" className="d-flex justify-center items-center mt-5">
+            <Link
+              to="/login"
+              className="d-flex justify-center items-center mt-5"
+            >
               <h1 className=" text-xl text-white font-bold ">Logout</h1>
               <HiArrowRightOnRectangle fontSize={20}></HiArrowRightOnRectangle>
             </Link>

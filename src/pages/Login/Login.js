@@ -84,8 +84,12 @@ const Login = () => {
               <input
                 {...register("email", {
                   required: "Email Address is required",
+                  pattern: {
+                    value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+                    message: "Please enter valid email address",
+                  },
                 })}
-                type="text"
+                type="email"
                 placeholder="email"
                 className="input input-bordered dark:text-black"
               />

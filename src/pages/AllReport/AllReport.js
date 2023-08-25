@@ -68,13 +68,13 @@ const AllReport = () => {
           <table className="table w-full">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Apartment ID</th>
-                <th>Landlord Name</th>
-                <th>Landlord Email</th>
-                <th>Discloser Name</th>
-                <th>Discloser Email</th>
-                <th>Delete Post</th>
+                <th className="text-center">No.</th>
+                <th className="text-center">Apartment ID</th>
+                <th className="text-center">Landlord Name</th>
+                <th className="text-center">Landlord Email</th>
+                <th className="text-center">Discloser Name</th>
+                <th className="text-center">Discloser Email</th>
+                <th className="text-center">Delete Post</th>
               </tr>
             </thead>
             <tbody>
@@ -88,7 +88,7 @@ const AllReport = () => {
                   <td className="text-center">{post?.tenant_name}</td>
                   <td className="text-center items-center">
                     <FaTrashAlt
-                      className="text-xl text-red-500 hover:text-2xl"
+                      className="text-xl text-red-500 hover:text-2xl ml-32"
                       onClick={() => {
                         setInfo([
                           {

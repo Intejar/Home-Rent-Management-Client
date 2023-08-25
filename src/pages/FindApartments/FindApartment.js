@@ -8,6 +8,7 @@ import { FaUser, FaEnvelope } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import "./FindApartment.css";
 import DealModal from "./DealModal/DealModal";
+import { FaHandshake, FaExclamationCircle } from "react-icons/fa";
 
 const FindApartment = () => {
   const {
@@ -225,8 +226,8 @@ const FindApartment = () => {
                 </div>
               </div>
               <div class="flex gap-2 justify-center items-center">
-                <HiHeart
-                  className="text-2xl  hover:text-red-500"
+                <FaHandshake
+                  className="text-3xl  hover:text-green-500"
                   onClick={() => {
                     setBooking([
                       {
@@ -244,7 +245,7 @@ const FindApartment = () => {
                       document.getElementById("my_modal_1").showModal();
                     }
                   }}
-                ></HiHeart>
+                ></FaHandshake>
                 <dialog id="my_modal_1" className="modal">
                   <form method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">
@@ -280,7 +281,7 @@ const FindApartment = () => {
                     </div>
                   </form>
                 </dialog>
-                <HiMegaphone
+                <FaExclamationCircle
                   className="text-2xl hover:text-red-500"
                   onClick={() => {
                     setBooking([
@@ -299,7 +300,7 @@ const FindApartment = () => {
                       document.getElementById("my_modal_2").showModal();
                     }
                   }}
-                ></HiMegaphone>
+                ></FaExclamationCircle>
                 <dialog id="my_modal_2" className="modal">
                   <form method="dialog" className="modal-box">
                     <h3 className="font-bold text-lg">

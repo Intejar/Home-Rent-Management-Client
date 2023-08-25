@@ -22,10 +22,10 @@ const PayementPage = () => {
   };
   return (
     <div>
-      <h1 className="text-xl font-bold">
+      <h1 className="text-xl font-bold text-center">
         Hi {name} make PAYMENT for Apartment Id:{apartment_id}{" "}
       </h1>
-      <p>Please pay {rent} Taka !</p>
+      <p className="text-center">Please pay {rent} Taka !</p>
       <div className="w-1/2 mt-10 mx-auto bg-orange-200 p-5">
         <Elements stripe={stripePromise}>
           <CheckoutForm data={data} />

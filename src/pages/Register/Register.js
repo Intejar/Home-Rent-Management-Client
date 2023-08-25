@@ -11,6 +11,7 @@ import {
 import Lottie from "react-lottie";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const Register = () => {
   const defaultOptions = {
@@ -69,6 +70,7 @@ const Register = () => {
     axios
       .post("http://localhost:8081/register", values)
       .then((res) => {
+        toast.success("User created successfully");
         navigate("/login");
       })
       .catch((err) => console.log(err));
@@ -102,8 +104,12 @@ const Register = () => {
               <input
                 {...register("email", {
                   required: "Email Address is required",
+                  pattern: {
+                    value: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+                    message: "Please enter valid email address",
+                  },
                 })}
-                type="text"
+                type="email"
                 placeholder="email"
                 className="input input-bordered"
               />

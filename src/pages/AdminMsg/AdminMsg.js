@@ -91,7 +91,7 @@ const AdminMsg = () => {
                   {post?.status === "unpaid" ? (
                     <td className="text-sm  text-blue-600 text-center">
                       <FaCreditCard
-                        className="text-2xl  hover:text-green-500"
+                        className="text-2xl  hover:text-green-500 ml-5"
                         onClick={() => {
                           setInfo([
                             {
@@ -125,7 +125,7 @@ const AdminMsg = () => {
                           </p>
                           <div className="modal-action">
                             <button
-                              className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+                              className="btn btn-warning text-white btn-xs sm:btn-sm md:btn-md lg:btn-lg"
                               onClick={() => {
                                 navigate("/dashboard/paymentPage", {
                                   state: {

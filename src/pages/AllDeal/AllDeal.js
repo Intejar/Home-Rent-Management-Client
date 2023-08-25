@@ -72,16 +72,16 @@ const AllDeal = () => {
           <table className="table w-full">
             <thead>
               <tr>
-                <th>Apartment ID</th>
-                <th>Apartment No</th>
-                <th>Area</th>
-                <th>Rent</th>
-                <th>Landlord Name</th>
-                <th>Landlord Email</th>
-                <th>Tenant Name</th>
-                <th>Tenant Email</th>
-                <th>Payment Status</th>
-                <th>Notify Tenant</th>
+                <th className="text-center">Apartment ID</th>
+                <th className="text-center">Apartment No</th>
+                <th className="text-center">Area</th>
+                <th className="text-center">Rent</th>
+                <th className="text-center">Landlord Name</th>
+                <th className="text-center">Landlord Email</th>
+                <th className="text-center">Tenant Name</th>
+                <th className="text-center">Tenant Email</th>
+                <th className="text-center">Payment Status</th>
+                <th className="text-center">Notify Tenant</th>
               </tr>
             </thead>
             <tbody>
@@ -107,7 +107,7 @@ const AllDeal = () => {
                   {post?.payment_status === "unpaid" ? (
                     <td className="text-center items-center">
                       <FaRegEdit
-                        className="text-2xl  hover:text-green-500"
+                        className="text-2xl  hover:text-green-500 hover:text-3xl ml-10"
                         onClick={() => {
                           setInfo([
                             {
